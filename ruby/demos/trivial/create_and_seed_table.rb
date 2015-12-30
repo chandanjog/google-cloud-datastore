@@ -57,8 +57,9 @@ tx = JSON.parse(resp.response.body)['transaction']
 entity = {
   # Set the entity key with only one `path` element: no parent.
   :key => {
-    :path => [{:kind => 'test_metrics'}]
+    :path => [{:kind => 'test_metrics', :name => Time.now.to_i }]
   },
+  
   # Set the entity properties:
   :properties => {
     :entity_id => {:integerValue => 1},
