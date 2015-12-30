@@ -72,7 +72,7 @@ entity = {
 mutation = {:insert => [entity]}
 
 # Commit the transaction and the insert mutation if the entity was not found.
-puts client.execute(
+result = client.execute(
   :api_method => datastore.datasets.commit,
   :parameters => {:datasetId => dataset_id},
   :body_object => {
@@ -80,6 +80,9 @@ puts client.execute(
     :mutation => mutation
   })
 
+puts result.status
+puts result.response
+puts result.error_message if result.error? 
 
 
 
