@@ -59,7 +59,7 @@ entity = {
   :key => {
     :path => [{:kind => 'test_metrics', :name => Time.now.to_i }]
   },
-  
+
   # Set the entity properties:
   :properties => {
     :entity_id => {:integerValue => 1},
@@ -72,7 +72,7 @@ entity = {
 mutation = {:insert => [entity]}
 
 # Commit the transaction and the insert mutation if the entity was not found.
-client.execute(
+puts client.execute(
   :api_method => datastore.datasets.commit,
   :parameters => {:datasetId => dataset_id},
   :body_object => {
