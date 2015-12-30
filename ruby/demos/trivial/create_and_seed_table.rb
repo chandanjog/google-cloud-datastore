@@ -1,3 +1,7 @@
+require 'rubygems'
+require 'json'
+require 'google/api_client'
+
 if ARGV.empty?
   abort "usage: adams.rb <dataset-id>"
 end
